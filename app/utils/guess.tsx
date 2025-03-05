@@ -1,6 +1,6 @@
 const rotate = 10;
-export function checkPrice(price: string){
-    if(prices.includes(price)){
+export function checkPrice(price: string, productIndex: number){
+    if(prices.includes(price) && productIndex < prices.length && prices[productIndex] === price){
         return wordToGuess[(prices.indexOf(price) + rotate) % wordToGuess.length]
     }
     return null;

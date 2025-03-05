@@ -8,7 +8,7 @@ export async function action({ request }: ActionFunctionArgs) {
   const formData = await request.formData();
   const guess = formData.get("guess");
   const productIndex = formData.get("productIndex");
-  const letter = checkPrice(guess as string);
+  const letter = checkPrice(guess as string, parseInt(productIndex as string));
   return { letter, productIndex };
 }
 
@@ -21,6 +21,7 @@ export default function Guess() {
     <div className="flex flex-col items-center justify-center gap-10">
 
       {guessFetcher.data?.letter ? <p className="text-2xl font-bold bg-green-500 text-white px-4 py-2 rounded-md">{guessFetcher.data?.letter}</p> :
+      guessFetcher.data?.letter === null ? <p className="text-2xl font-bold bg-red-500 text-white px-4 py-2 rounded-md">Fout</p> :
       <>
       <h1 className="text-4xl font-bold">Raad de prijs</h1>
       <guessFetcher.Form method="post" className="flex flex-col items-center justify-center gap-10">
