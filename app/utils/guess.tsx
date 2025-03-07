@@ -1,29 +1,30 @@
 const rotate = 10;
-export function checkPrice(price: string, productIndex: number){
-    if(prices.includes(price) && productIndex < prices.length && prices[productIndex] === price){
-        return wordToGuess[(prices.indexOf(price) + rotate) % wordToGuess.length]
+export function checkPrice(price: string, productIndex: number) {
+    const priceWithoutCommas = price.replace(",00", "").replace(",", "");
+    if (prices.includes(priceWithoutCommas) && productIndex < prices.length && prices[productIndex] === priceWithoutCommas) {
+        return wordToGuess[(prices.indexOf(priceWithoutCommas) + rotate) % wordToGuess.length]
     }
     return null;
 }
 
 export const wordToGuess = [
+    "J",
+    "O",
+    "W",
     "A",
     "L",
     "L",
     "E",
+    "K",
+    "O",
+    "T",
+    "S",
     "W",
     "I",
     "E",
     "J",
     "O",
-    "W",
-    "A",
-    "J",
-    "O",
-    "K",
-    "O",
-    "T",
-    "S",
+    "A"
 ]
 
 export const prices = [
