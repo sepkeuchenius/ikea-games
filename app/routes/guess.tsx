@@ -17,7 +17,7 @@ export default function Guess() {
   const navigate = useNavigate();
 
   return <div className="flex flex-col items-center justify-center h-screen gap-3">
-    <button className="bg-blue-500 text-white px-4 py-2 rounded-md absolute top-10 left-10" onClick={() => navigate("/")}>Terug</button>
+    <button className="bg-blue-500 text-white px-4 py-2 rounded-md absolute top-10 left-10" onClick={() => navigate("/ikea")}>Terug</button>
     <div className="flex flex-col items-center justify-center gap-10">
 
       {guessFetcher.data?.letter ? <p className="text-2xl font-bold bg-green-500 text-white px-4 py-2 rounded-md">{guessFetcher.data?.letter}</p> :
