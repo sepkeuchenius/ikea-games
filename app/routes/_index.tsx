@@ -17,7 +17,7 @@ export default function Index() {
   useEffect(() => {
     const intervalId = window.setInterval(() => {
       setCurrentProductIndex((current) => (current + 1) % productImages.length);
-    }, 300);
+    }, 200);
 
     // Cleanup the interval when component unmounts
     return () => clearInterval(intervalId);
