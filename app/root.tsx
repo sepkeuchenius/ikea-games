@@ -27,8 +27,8 @@ export const links: LinksFunction = () => [
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "Ikea Games" },
-    { name: "description", content: "Guess the Ikea product" },
+    { title: "Stam Games" },
+    { name: "description", content: "Stam Games" },
   ];
 };
 
